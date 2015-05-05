@@ -4,4 +4,8 @@
     <LocalDebuggerCommandArguments>C:\Modelrun\gitModel80\base\HBWPK.MAT</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommandArguments>C:\Modelrun\gitModel80\base\HBWPKTrips.MAT</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

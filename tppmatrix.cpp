@@ -41,7 +41,7 @@ void tppInitDllNative ()
 		return;
 
     // Link DLL
-	HMODULE hMod = LoadLibrary(_T("C:\Program Files\Citilabs\CubeVoyager\tppdlibx.dll"));
+	HMODULE hMod = LoadLibrary(_T("tppdlibx.dll"));
 
 	if (hMod==NULL) {
 		fprintf(stderr, "\n\n## TPPDLIBX.DLL not found.  Check your PATH and license.\n");
@@ -151,7 +151,7 @@ void TPPMatrix::openFile(char *fileName)
 
     //Set class attributes
     _nTables = _matlist->mats;
-    _nZones  = _matlist->zones;
+    _nZones  = _matlist->Zones;
 
     //Used by class methods
     _rowptr = (double *) malloc( ((_nZones+3)*sizeof(double)) );
@@ -176,8 +176,8 @@ void TPPMatrix::openFile(char *fileName)
             _rowPos[table] = (DWORD *) malloc ((_matlist->zones+3) * sizeof(DWORD));
         }
 
-		if(origin>_matlist->zones || origin <= 0){
-            cout << "**TPPMatrix: Read zone "<<origin<<" which is greater than "<<_matlist->zones<<" in matrix" << endl;
+		if(origin>_matlist->Zones || origin <= 0){
+            cout << "**TPPMatrix: Read zone "<<origin<<" which is greater than "<<_matlist->Zones<<" in matrix" << endl;
             throw MatrixReadException();
 		}
 

@@ -79,9 +79,6 @@ int _tmain(int argc, char* argv[])
     printf("\nDone; %d errors and %d of %d completed.\n",errors,argc-errors-1,argc-1);
     fflush(stdout);
 
-	////////////////////
-	cout << "Press a key to continue";
-	cin ;
 	return 0;
 }
 

@@ -187,7 +187,7 @@ The structure below needs to be compiled with a 1-Byte alignment compiler direct
 #include <time.h>
 #include <windows.h>
 
-#pragma pack(push, r1, 1)
+#pragma pack(push, 0)
 
 
 struct MATLIST {
@@ -213,8 +213,8 @@ struct MATLIST {
         BYTE*   Mspecs;    // pointer to varBytes;
         BYTE*   Mnames;    // pointer to varNames;
         void*   buffer;    // location of required buffer (i/o & work)
-        } // __attribute__((_packed_)); // MATLIST; //((packed)) MATLIST ;
-#pragma pack(pop,r1)
+}
+#pragma pack(0)
 ;
 
 typedef int ( *pFunc_FileInquire)  (char*, MATLIST**);
